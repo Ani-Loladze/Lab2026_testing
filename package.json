@@ -4,7 +4,8 @@
   "description": "Aimed at testing the Discogs.com website with test automation frameworks.",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "playwright test"
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +14,8 @@
     "@playwright/test": "^1.59.1",
     "@types/node": "^25.6.0",
     "eslint": "^10.2.0",
-    "globals": "^17.5.0"
+    "globals": "^17.5.0",
+    "typescript": "^5.3.3",
+    "typescript-eslint": "^8.0.0"
   }
 }
