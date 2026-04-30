@@ -17,5 +17,8 @@
     "globals": "^17.5.0",
     "typescript": "^5.3.3",
     "typescript-eslint": "^8.0.0"
+  },
+  "dependencies": {
+    "@estruyf/github-actions-reporter": "^1.12.0"
   }
 }
