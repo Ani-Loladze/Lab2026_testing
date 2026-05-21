@@ -1,14 +1,20 @@
 import { Page, Locator } from '@playwright/test';
 
-export class MainPage { 
-  readonly exploreDiscography: Locator;
-  private exploreDropdown: Locator;
+export class MainPage {
+  public readonly page: Page;
+  public readonly exploreDiscography: Locator;
+  public readonly exploreDropdown: Locator;
 
-  constructor(public page: Page) {    
-    this.exploreDiscography = this.page
-      .getByRole('navigation')
-      .getByRole('button', { name: 'Explore Discography' });
-    this.exploreDropdown = this.page.getByRole('menu');
+  constructor(page: Page) {
+    this.page = page;
+
+    const navigation = page.getByRole('navigation');
+
+    this.exploreDiscography = navigation.getByRole('button', {
+      name: 'Explore Discography',
+    });
+
+    this.exploreDropdown = page.getByRole('menu');
   }
 
   async open(): Promise<void> {
