@@ -1,11 +1,9 @@
 import { Page, Locator } from '@playwright/test';
 
 export class MainPage {
-  private page: Page;
-
-  //Explore Discography
-  readonly exploreDiscography: Locator;
-  private exploreDropdown: Locator;
+  public readonly page: Page;
+  public readonly exploreDiscography: Locator;
+  public readonly exploreDropdown: Locator;
 
   //Shop Music
   readonly shopMusic: Locator;
@@ -14,10 +12,11 @@ export class MainPage {
   constructor(page: Page) {
     this.page = page;
 
-    //Explore Discography
-    this.exploreDiscography = page
-      .getByRole('navigation')
-      .getByRole('button', { name: 'Explore Discography' });
+    const navigation = page.getByRole('navigation');
+
+    this.exploreDiscography = navigation.getByRole('button', {
+      name: 'Explore Discography',
+    });
 
     this.exploreDropdown = page.getByRole('menu');
 
